@@ -1,6 +1,10 @@
 # Email_model
 Email model for codeigniter
 
+Benifits: 
+Breaks emailing into two process and makes it easier to trouble shoot.
+Takes advantage of CI email library
+
 Need to set up the following tables:
 
 ```
@@ -46,7 +50,7 @@ $message = $this->load->view('templates/emails/expiring_contracts', array('expir
 $this->email_model->push($to, $subject, $message, $headers);
 ```
 
-## Make cron job that hits
+## Make cron job to push from queue
 
 ```
 public function process_email() {
