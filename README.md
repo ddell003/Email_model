@@ -37,7 +37,7 @@ if not, create the file and add:
     $config['crlf'] = "\r\n";
 ```
 
-Need to set up the following tables:
+## Need to set up the following tables:
 
 ### Email Queue
 
@@ -72,8 +72,8 @@ CREATE TABLE `email_archive` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ```
-
-Push to the model:
+In your controller, to utilize email model:
+Push Email to the model:
 
 ```
 $to = 'someEmail@gmail.com';
