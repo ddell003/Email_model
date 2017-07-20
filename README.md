@@ -72,6 +72,7 @@ CREATE TABLE `email_archive` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ```
+## Pushing To email Queue
 In your controller, to utilize email model:
 Push Email to the model:
 
@@ -88,7 +89,7 @@ $message = $this->load->view('templates/emails/expiring_contracts', array('expir
 $this->email_model->push($to, $subject, $message, $headers);
 ```
 
-## Make cron job to push from queue
+## Make cron job to proccess queue
 
 ```
 public function process_email() {
