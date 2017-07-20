@@ -5,7 +5,7 @@ Benifits:
 Breaks emailing into two process and makes it easier to trouble shoot.
 Takes advantage of CI email library
 
-### CI Email config file
+## CI Email config file
 in config look to see if you have a file called email.php
 
 if not, create the file and add:
