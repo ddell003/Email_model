@@ -36,6 +36,10 @@ if not, create the file and add:
     $config['newline'] = "\r\n"; //use double quotes to comply with RFC 822 standard
     $config['crlf'] = "\r\n";
 ```
+## Default Email View Template
+This template will be loaded each time an email is pushed to the queue
+
+(see email_wrapper.php)
 
 ## Need to set up the following tables:
 
@@ -98,5 +102,7 @@ public function process_email() {
 }
 
 ```
+
+
 
 
