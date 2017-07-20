@@ -5,6 +5,38 @@ Benifits:
 Breaks emailing into two process and makes it easier to trouble shoot.
 Takes advantage of CI email library
 
+### CI Email config file
+in config look to see if you have a file called email.php
+
+if not, create the file and add:
+
+```
+<?php
+    //use this if you do not have .env set up
+   /* $config['protocol'] = 'smtp';
+    $config['smtp_host'] = 'mailtrap.io'; //change this
+    $config['smtp_port'] = '';
+    $config['smtp_user'] = ''; //change this
+    $config['smtp_pass'] = ''; //change this
+    $config['mailtype'] = 'html';
+    $config['charset'] = 'iso-8859-1';
+    $config['wordwrap'] = TRUE;
+    $config['newline'] = "\r\n"; //use double quotes to comply with RFC 822 standard
+    $config['crlf'] = "\r\n";*/
+    
+    //connect to .env variables
+    $config['protocol'] = 'smtp';
+    $config['smtp_host'] = getenv('SMTP_HOST');
+    $config['smtp_port'] = getenv('SMTP_PORT');
+    $config['smtp_user'] = getenv('SMTP_USER'); //change this
+    $config['smtp_pass'] = getenv('SMTP_PASS');
+    $config['mailtype'] = 'html';
+    $config['charset'] = 'iso-8859-1';
+    $config['wordwrap'] = TRUE;
+    $config['newline'] = "\r\n"; //use double quotes to comply with RFC 822 standard
+    $config['crlf'] = "\r\n";
+```
+
 Need to set up the following tables:
 
 ### Email Queue
