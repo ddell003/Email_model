@@ -103,6 +103,13 @@ public function process_email() {
 
 ```
 
+## Trouble shooting:
+
+`Fatal error: Call to undefined function imap_rfc822_parse_headers()`
+Solution: need to add the php extension imap
+https://stackoverflow.com/questions/9654453/fatal-error-call-to-undefined-function-imap-open-in-php
+
+
 
 
 
